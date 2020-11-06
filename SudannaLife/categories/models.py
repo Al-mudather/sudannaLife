@@ -1,11 +1,12 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 ######################################################
 ##TODO:         category model                   ##
 ######################################################
  
 
-class category(models.Model):
+class Category(models.Model):
     #TODO: Customer information
     ar_title = models.CharField(max_length=255)
     en_title = models.CharField(max_length=255, blank=True, null=True)
