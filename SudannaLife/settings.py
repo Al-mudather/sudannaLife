@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'SudannaLife.account',
-    'SudannaLife.categories',
-    'SudannaLife.competitions',
+    # 'SudannaLife.categories',
+    # 'SudannaLife.competitions',
     'graphene_django',
     'corsheaders',
 ]
