@@ -3,13 +3,10 @@ import graphql_jwt
 from graphql_jwt.decorators import login_required, token_auth
 from graphene import ObjectType
 from graphene.relay.node import Node
-# from graphene_django.types import DjangoObjectType
-# from graphene_django.filter import DjangoFilterConnectionField
 from graphene_django.types import ErrorType
 
-from graphene_file_upload.scalars import Upload
 
-from Dafoo.utils import HelperCLass
+from SudannaLife.utils import HelperCLass
 
 # Import the models
 from .models import User
@@ -22,7 +19,6 @@ from .schema import UserModelType
 class UserInput(graphene.InputObjectType):
     username = graphene.String(required=True)
     password = graphene.String(required=True)
-    is_worker = graphene.Boolean()
 
 
 # TODO: Create User mutation
@@ -111,7 +107,6 @@ class Mutation(ObjectType):
     delete_User = DeleteUserMutation.Field()
 
     # TODO: Authentication
-    # token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     token_auth = ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()
